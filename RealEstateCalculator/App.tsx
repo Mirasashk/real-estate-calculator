@@ -1,20 +1,21 @@
+import React from 'react';
+import { Provider as ReduxProvider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { Provider as PaperProvider } from 'react-native-paper';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { store, persistor } from './src/state/store';
+import { AppNavigator } from './src/navigation/AppNavigator';
+import { appTheme } from './src/config/theme';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ReduxProvider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <PaperProvider theme={appTheme}>
+          <AppNavigator />
+          <StatusBar style="auto" />
+        </PaperProvider>
+      </PersistGate>
+    </ReduxProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
