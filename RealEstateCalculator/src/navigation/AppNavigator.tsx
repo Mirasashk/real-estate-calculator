@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { HomeScreen } from '../screens/HomeScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -12,8 +13,7 @@ export type RootStackParamList = {
 
 const Stack = createStackNavigator<RootStackParamList>();
 
-// Placeholder screens until UI agent implements them
-const HomeScreen = () => null;
+// Placeholder screens until implemented
 const PropertyInputScreen = () => null;
 const AnalysisScreen = () => null;
 
