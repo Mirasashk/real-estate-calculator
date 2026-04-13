@@ -2,6 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { HomeScreen } from '../screens/HomeScreen';
+import { PropertyInputScreen } from '../screens/PropertyInputScreen';
+import { AnalysisScreen } from '../screens/AnalysisScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -12,10 +14,6 @@ export type RootStackParamList = {
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
-
-// Placeholder screens until implemented
-const PropertyInputScreen = () => null;
-const AnalysisScreen = () => null;
 
 export const AppNavigator: React.FC = () => {
   return (
